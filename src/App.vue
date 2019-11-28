@@ -1,32 +1,24 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <my-header></my-header>
+    <router-view />
+    <my-footer></my-footer>
   </div>
 </template>
-
-<style lang="less">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+<script>
+// 引入头部和底部组件
+import MyFooter from './components/my-footer'
+import MyHeader from './components/my-header'
+export default {
+  components: {
+    MyFooter,
+    MyHeader
   }
+}
+</script>
+<style lang="less">
+#app{
+  height: 100%;
+  width: 100%
 }
 </style>
